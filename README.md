@@ -1,1 +1,3 @@
-# Sistema financeiro para controle de contas a pagar e receber 
+#  Financial System 
+
+Sistema que gerencia o fluxo de caixa
