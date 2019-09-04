@@ -40,3 +40,16 @@ For running the Front-end you must execute the following command:
 ```
 ng serve
 ```
+
+After running the code above, you`ll be able to open the front-end application on localhost:8000.
+
+For running the Back-end you need to access the folder server and run the following command:
+
+```
+npm run build;
+npm run start;
+```
+
+This will parse the Typescript code to Javascript, and will initialize the application on localhost:3000.
+
+After this you'll be able to run the application =D.
