@@ -1,7 +1,7 @@
 import cors from "cors";
 import express, { NextFunction, Request, Response } from "express";
 
-class App {
+export class App {
 
     public app: express.Application;
 
