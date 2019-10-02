@@ -41,15 +41,20 @@ For running the Front-end you must execute the following command:
 ng serve
 ```
 
-After running the code above, you`ll be able to open the front-end application on localhost:8000.
+After running the code above, you`ll be able to open the front-end application on `localhost:8000`.
 
-For running the Back-end you need to access the folder server and run the following command:
+For running the Back-end you need to install `nodemon` globally on your computer:
 
 ```
-npm run build;
-npm run start;
+npm install -g nodemon
 ```
 
-This will parse the Typescript code to Javascript, and will initialize the application on localhost:3000.
+After installing nodemon, access the root of folder `server` and run:
+
+```
+nodemon .
+```
+
+This code above will start application back-end, and it will be running on `localhost:3000`.
 
 After this you'll be able to run the application =D.
