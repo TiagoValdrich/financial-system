@@ -41,7 +41,7 @@ For running the Front-end you must execute the following command:
 ng serve
 ```
 
-After running the code above, you`ll be able to open the front-end application on `localhost:8000`.
+After running the code above, you'll be able to open the front-end application on `localhost:8000`.
 
 For running the Back-end you need to install `nodemon` globally on your computer:
 
