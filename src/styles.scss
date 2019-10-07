@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+// Reset browser default CSS styles.
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+html, body {
+    height: 100%;
+    background-color: #f0f0f0 !important;
+}
