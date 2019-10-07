@@ -12,7 +12,7 @@ module.exports = (sequelize) => {
         },
         date: {
             type: sequelize.Sequelize.DATE,
-            allowNull: false,
+            allowNull: false
         }
     }, {
         tableName: 'revenue',
