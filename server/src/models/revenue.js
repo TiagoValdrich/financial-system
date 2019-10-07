@@ -9,6 +9,10 @@ module.exports = (sequelize) => {
         value: {
             type: sequelize.Sequelize.STRING,
             allowNull: false
+        },
+        date: {
+            type: sequelize.Sequelize.DATE,
+            allowNull: false
         }
     }, {
         tableName: 'revenue',
