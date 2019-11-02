@@ -1,7 +1,7 @@
 // Creating a new model, that consequently will
 // create a table on database with the fields and configs below
 module.exports = (sequelize) => {
-    const Revenue = sequelize.define('Revenue', {
+    const Expense = sequelize.define('Expense', {
         title: {
             type: sequelize.Sequelize.STRING,
             allowNull: false
@@ -15,10 +15,10 @@ module.exports = (sequelize) => {
             allowNull: false
         }
     }, {
-        tableName: 'revenue',
+        tableName: 'expense',
         timestamps: true,
         paranoid: false
     });
 
-    return Revenue;
+    return Expense;
 };

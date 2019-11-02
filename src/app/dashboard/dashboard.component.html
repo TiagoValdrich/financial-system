@@ -6,12 +6,8 @@
                     Receitas
                 </div>
                 <div class="card-body">
-                    <canvas baseChart
-                        [datasets]="revenuesChartData"
-                        [labels]="barChartLabels"
-                        [options]="barChartOptions"
-                        [plugins]="barChartPlugins"
-                        [legend]="barChartLegend"
+                    <canvas baseChart [datasets]="revenuesChartData" [labels]="revenueBarChartLabels"
+                        [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend"
                         [chartType]="barChartType">
                     </canvas>
                 </div>
@@ -23,14 +19,50 @@
                     Despesas
                 </div>
                 <div class="card-body">
-                    <canvas baseChart
-                        [datasets]="expensesChartData"
-                        [labels]="barChartLabels"
-                        [options]="barChartOptions"
-                        [plugins]="barChartPlugins"
-                        [legend]="barChartLegend"
+                    <canvas baseChart [datasets]="expensesChartData" [labels]="expenseBarChartLabels"
+                        [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend"
                         [chartType]="barChartType">
                     </canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mt-5">
+            <div class="card bg-success">
+                <div class="card-body card-body-content">
+                    <div class="row">
+                        <div class="col-2 col-md-2 card-body-icon center">
+                            <i class="fa fa-dollar-sign fa-5x"></i>
+                        </div>
+                        <div class="col-10 col-md-10 left">
+                            <h1 class="mt-3">
+                                <strong>Receitas</strong>
+                                <div class="mt-3">
+                                    {{ revenuesTotals | currency:'BRL' }}
+                                </div>
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mt-5">
+            <div class="card bg-warning">
+                <div class="card-body card-body-content">
+                    <div class="row">
+                        <div class="col-2 col-md-2 card-body-icon center">
+                            <i class="fa fa-dollar-sign fa-5x"></i>
+                        </div>
+                        <div class="col-10 col-md-10 left">
+                            <h1 class="mt-3">
+                                <strong>Despesas</strong>
+                                <div class="mt-3">
+                                    {{ expensesTotals | currency:'BRL' }}
+                                </div>
+                            </h1>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
