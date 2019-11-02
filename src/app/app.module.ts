@@ -8,6 +8,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ChartsModule } from 'ng2-charts';
+import { HttpClientModule } from '@angular/common/http';
+import { RevenueService } from './services/revenue.service';
+import { ExpenseService } from './services/expense.service';
+import { UtilsService } from './services/utils.service';
 
 @NgModule({
   declarations: [
@@ -20,9 +24,14 @@ import { ChartsModule } from 'ng2-charts';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    ChartsModule
+    ChartsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    RevenueService,
+    ExpenseService,
+    UtilsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
