@@ -24,7 +24,7 @@ npm install -g @angular/cli
 
 After installing the front-end dependencies, it's time to clone the back-end. Go to the [Financial System Backend repository](https://github.com/TiagoValdrich/financial-system-backend) and clone that on the same folder of front-end or another folder of your preference.
 
-> You'll need to have the back-end running to run the front-end, so ensure that you have this repo cloned.
+> You'll need to have the back-end running to run the front-end, so ensure that you have that repository cloned.
 
 After following these steps you'll be able to run the application on your machine. =D
 
@@ -33,9 +33,9 @@ After following these steps you'll be able to run the application on your machin
 The application is divided in two parts:
 
 - **Front-end**: Which is this repository.
-- **Back-end**: That is on [financial-system-backend](https://github.com/TiagoValdrich/financial-system-backend) and you need to have the backend cloned to run the application.
+- **Back-end**: That is on [financial-system-backend](https://github.com/TiagoValdrich/financial-system-backend) and you need to have it for running the application.
 
-> Before running the front-end, ensure to put the back-end to run on `http://localhost:3000`, or the front-end will not work! The tutorial to run back-end is on it's own repository.
+Before running the front-end, ensure that the back-end is running on `http://localhost:3000`, or the front-end will not work! The tutorial to run back-end is on it's own repository.
 
 For running the Front-end you must execute the following command:
 
