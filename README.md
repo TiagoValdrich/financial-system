@@ -16,12 +16,6 @@ If you already have NodeJS installed in your computer, you need to install the p
 npm install
 ```
 
-Now that you have downloaded Front-end dependencies, it's time to download Angular globally:
-
-```
-npm install -g @angular/cli
-```
-
 After installing the front-end dependencies, it's time to clone the back-end. Go to the [Financial System Backend repository](https://github.com/TiagoValdrich/financial-system-backend) and clone that on the same folder of front-end or another folder of your preference.
 
 > You'll need to have the back-end running to run the front-end, so ensure that you have that repository cloned.
@@ -40,7 +34,7 @@ Before running the front-end, ensure that the back-end is running on `http://loc
 For running the Front-end you must execute the following command:
 
 ```
-ng serve
+npm start
 ```
 
 And that's it, you made it! So now, if you access `http://localhost:4200` you'll see a beautiful application running on your browser.
