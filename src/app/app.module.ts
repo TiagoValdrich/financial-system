@@ -15,6 +15,8 @@ import { ExpenseService } from './services/expense.service';
 import { UtilsService } from './services/utils.service';
 import { RevenueComponent } from './revenue/revenue.component';
 import { RevenueEditComponent } from './revenue/revenue-edit/revenue-edit.component';
+import { ExpenseComponent } from './expense/expense.component';
+import { ExpenseEditComponent } from './expense/expense-edit/expense-edit.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 
@@ -25,7 +27,9 @@ import { ToastrModule } from 'ngx-toastr';
     HeaderComponent,
     FooterComponent,
     RevenueComponent,
-    RevenueEditComponent
+    RevenueEditComponent,
+    ExpenseComponent,
+    ExpenseEditComponent
   ],
   imports: [
     BrowserModule,
