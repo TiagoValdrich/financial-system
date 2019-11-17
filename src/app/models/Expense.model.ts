@@ -6,6 +6,7 @@ export default class Expense {
     public title: string;
     public value: number;
     public date: string;
+    public CategoryId: number | string;
     public createdAt: string;
     public updatedAt: string;
 

@@ -5,6 +5,8 @@ import { RevenueComponent } from './revenue/revenue.component';
 import { RevenueEditComponent } from './revenue/revenue-edit/revenue-edit.component';
 import { ExpenseComponent } from './expense/expense.component';
 import { ExpenseEditComponent } from './expense/expense-edit/expense-edit.component';
+import { CategoryComponent } from './category/category.component';
+import { CategoryEditComponent } from './category/category-edit/category-edit.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -14,6 +16,9 @@ const routes: Routes = [
   { path: 'expense', component: ExpenseComponent },
   { path: 'expense/edit', component: ExpenseEditComponent },
   { path: 'expense/edit/:id', component: ExpenseEditComponent },
+  { path: 'category', component: CategoryComponent },
+  { path: 'category/edit', component: CategoryEditComponent },
+  { path: 'category/edit/:id', component: CategoryEditComponent },
   { path: '**', component: DashboardComponent }
 ];
 

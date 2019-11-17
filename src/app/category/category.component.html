@@ -3,11 +3,11 @@
         <div class="col-md-12">
             <div class="row">
                 <div class="col-md-6">
-                    <h1 class="expense-title">Despesa</h1>
+                    <h1 class="category-title">Categorias</h1>
                 </div>
                 <div class="col-md-6 align-right align-center">
-                    <button class="btn btn-success expense-btn-add" routerLink="/expense/edit">
-                        <i class="fa fa-plus"></i> Adicionar nova Despesa
+                    <button class="btn btn-success category-btn-add" routerLink="/category/edit">
+                        <i class="fa fa-plus"></i> Adicionar nova categoria
                     </button>
                 </div>
             </div>
@@ -17,30 +17,26 @@
                         <thead>
                             <th>&nbsp;</th>
                             <th>ID</th>
-                            <th>Data</th>
                             <th>Título</th>
-                            <th>Valor</th>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let expense of expenses">
+                            <tr *ngFor="let category of categories">
                                 <td>
                                     <div class="row">
                                         <div class="col-md-12">
                                             <button class="btn btn-warning mr-2" title="Editar"
-                                                routerLink="/expense/edit/{{expense.id}}">
+                                                routerLink="/category/edit/{{category.id}}">
                                                 <i class="fa fa-edit"></i>
                                             </button>
                                             <button class="btn btn-danger" title="Excluir"
-                                                (click)="deleteExpense(expense.id)">
+                                                (click)="deleteCategory(category.id)">
                                                 <i class="fa fa-times"></i>
                                             </button>
                                         </div>
                                     </div>
                                 </td>
-                                <td>{{ expense.id }}</td>
-                                <td>{{ expense.date }}</td>
-                                <td>{{ expense.title }}</td>
-                                <td>{{ expense.value | currency: 'BRL' }}</td>
+                                <td>{{ category.id }}</td>
+                                <td>{{ category.title }}</td>
                             </tr>
                         </tbody>
                     </table>
