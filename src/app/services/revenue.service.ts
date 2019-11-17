@@ -12,6 +12,15 @@ export class RevenueService {
     public http: HttpClient
   ) { }
 
+  async getRevenue(id: number): Promise<any> {
+    try {
+      const response: any = await this.http.get(`${environment.URL_API}/revenue/${id}`).toPromise();
+      return Promise.resolve(response);
+    } catch (err) {
+      return onError(err);
+    }
+  }
+
   async getRevenues(): Promise<Revenue[]> {
     try {
       const response: any = await this.http.get(`${environment.URL_API}/revenue`).toPromise();
@@ -22,9 +31,27 @@ export class RevenueService {
     }
   }
 
+  async saveRevenue(revenue): Promise<Revenue[]> {
+    try {
+      const response: any = await this.http.put(`${environment.URL_API}/revenue`, revenue).toPromise();
+      return response;
+    } catch (err) {
+      return onError(err);
+    }
+  }
+
+  async deleteRevenue(id: number): Promise<any> {
+    try {
+      const response: any = await this.http.delete(`${environment.URL_API}/revenue/${id}`).toPromise();
+      return response;
+    } catch (err) {
+      return onError(err);
+    }
+  }
+
 }
 
 function onError(err): Promise<any> {
-  console.error('An error occurred while fetching revenues', err.stack || err);
+  console.error('An error occurred on revenues service', err.stack || err);
   return Promise.reject(new Error(err));
 }

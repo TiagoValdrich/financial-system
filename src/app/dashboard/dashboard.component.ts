@@ -58,14 +58,12 @@ export class DashboardComponent implements OnInit {
         const data = {};
 
         revenues.forEach((revenue: Revenue) => {
-          const revenueDate: string = this.utilsService.formatDate(revenue.date);
-
           this.revenuesTotals += revenue.value;
 
-          if (!data.hasOwnProperty(revenueDate)) {
-            data[revenueDate] = revenue.value;
+          if (!data.hasOwnProperty(revenue.date)) {
+            data[revenue.date] = revenue.value;
           } else {
-            data[revenueDate] += revenue.value;
+            data[revenue.date] += revenue.value;
           }
         });
 
@@ -83,14 +81,12 @@ export class DashboardComponent implements OnInit {
         const data = {};
 
         expenses.forEach((expense: Expense) => {
-          const expenseDate: string = this.utilsService.formatDate(expense.date);
-
           this.expensesTotals += expense.value;
 
-          if (!data.hasOwnProperty(expenseDate)) {
-            data[expenseDate] = expense.value;
+          if (!data.hasOwnProperty(expense.date)) {
+            data[expense.date] = expense.value;
           } else {
-            data[expenseDate] += expense.value;
+            data[expense.date] += expense.value;
           }
         });
 

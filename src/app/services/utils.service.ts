@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import * as moment from 'moment';
 
 @Injectable({
   providedIn: 'root'
@@ -7,8 +8,8 @@ export class UtilsService {
 
   constructor() { }
 
-  formatDate(data: Date): string {
-    return `${data.getDate()}/${data.getMonth()}/${data.getFullYear()}`;
+  formatDate(date: Date): string {
+    return moment(date).format('DD/MM/YYYY');
   }
 
 }

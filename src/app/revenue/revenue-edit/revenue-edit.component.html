@@ -1,0 +1,39 @@
+<div class="container mt-5 revenue-edit">
+    <div class="row">
+        <div class="col-md-12">
+            <form [formGroup]="form" (ngSubmit)="save()" novalidate>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h1 class="revenue-title">{{ idEdit ? 'Editar receita' : 'Nova receita' }}</h1>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="label-title" for="title"><strong>Título</strong></label>
+                            <input id="title" type="text" formControlName="title" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label class="label-title" for="value"><strong>Valor</strong></label>
+                            <input id="value" type="text" formControlName="value" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label class="label-title" for="date"><strong>Data</strong></label>
+                            <input id="date" type="date" formControlName="date" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-5 align-right">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-primary mr-3" routerLink="/revenue">Voltar</button>
+                        <button type="submit" class="btn btn-success">Salvar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
