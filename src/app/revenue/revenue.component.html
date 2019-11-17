@@ -1,0 +1,51 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1 class="revenue-title">Receitas</h1>
+                </div>
+                <div class="col-md-6 align-right align-center">
+                    <button class="btn btn-success revenue-btn-add" routerLink="/revenue/edit">
+                        <i class="fa fa-plus"></i> Adicionar nova Receita
+                    </button>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <table class="table table-striped">
+                        <thead>
+                            <th>&nbsp;</th>
+                            <th>ID</th>
+                            <th>Data</th>
+                            <th>Título</th>
+                            <th>Valor</th>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let revenue of revenues">
+                                <td>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <button class="btn btn-warning mr-2" title="Editar"
+                                                routerLink="/revenue/edit/{{revenue.id}}">
+                                                <i class="fa fa-edit"></i>
+                                            </button>
+                                            <button class="btn btn-danger" title="Excluir"
+                                                (click)="deleteRevenue(revenue.id)">
+                                                <i class="fa fa-times"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>{{ revenue.id }}</td>
+                                <td>{{ revenue.date }}</td>
+                                <td>{{ revenue.title }}</td>
+                                <td>{{ revenue.value | currency: 'BRL' }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
