@@ -12,11 +12,38 @@ export class ExpenseService {
     public http: HttpClient
   ) { }
 
+  async getExpense(id: number): Promise<any> {
+    try {
+      const response: any = await this.http.get(`${environment.URL_API}/expense/${id}`).toPromise();
+      return Promise.resolve(response);
+    } catch (err) {
+      return onError(err);
+    }
+  }
+
   async getExpenses(): Promise<Expense[]> {
     try {
       const response: any = await this.http.get(`${environment.URL_API}/expense`).toPromise();
       const expenses = Expense.buildExpensesFromResponse(response);
       return Promise.resolve(expenses);
+    } catch (err) {
+      return onError(err);
+    }
+  }
+
+  async saveExpense(expense): Promise<Expense[]> {
+    try {
+      const response: any = await this.http.put(`${environment.URL_API}/expense`, expense).toPromise();
+      return response;
+    } catch (err) {
+      return onError(err);
+    }
+  }
+
+  async deleteExpense(id: number): Promise<any> {
+    try {
+      const response: any = await this.http.delete(`${environment.URL_API}/expense/${id}`).toPromise();
+      return response;
     } catch (err) {
       return onError(err);
     }
