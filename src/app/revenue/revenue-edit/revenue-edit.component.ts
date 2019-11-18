@@ -5,6 +5,7 @@ import { RevenueService } from 'src/app/services/revenue.service';
 import { ToastrService } from 'ngx-toastr';
 import * as moment from 'moment';
 import { CategoryService } from 'src/app/services/category.service';
+import { FinancialResourceService } from 'src/app/services/financial-resource.service';
 
 @Component({
   selector: 'app-revenue-edit',
@@ -16,11 +17,13 @@ export class RevenueEditComponent implements OnInit {
   public isEdit = false;
   public revenueId: number;
   public categories: Array<any> = [];
+  public financialResources: Array<any> = [];
   public form: FormGroup = new FormGroup({
     title: new FormControl(null, []),
     value: new FormControl(null, []),
     date: new FormControl(null, []),
-    CategoryId: new FormControl(null, [])
+    CategoryId: new FormControl(null, []),
+    FinancialResourceId: new FormControl(null, [])
   });
 
   constructor(
@@ -28,29 +31,35 @@ export class RevenueEditComponent implements OnInit {
     private router: Router,
     private revenueService: RevenueService,
     private toastrService: ToastrService,
-    private categoryService: CategoryService
+    private categoryService: CategoryService,
+    private financialResourceService: FinancialResourceService
   ) { }
 
   ngOnInit() {
     this.categoryService.getCategories().then(categories => {
       this.categories = categories;
 
-      this.activatedRoute.params.subscribe(params => {
-        if (params.id) {
-          this.revenueId = params.id;
-          this.isEdit = true;
-          this.revenueService.getRevenue(params.id)
-            .then((revenue) => {
-              this.form.get('title').setValue(revenue.title);
-              this.form.get('value').setValue(parseFloat(revenue.value));
-              this.form.get('date').setValue(moment.utc(revenue.date).format('YYYY-MM-DD'));
-              this.form.get('CategoryId').setValue(revenue.CategoryId);
-            })
-            .catch((err) => {
-              this.toastrService.error('Erro ao obter receita.');
-              console.error('Error to fetch revenue', err);
-            });
-        }
+      this.financialResourceService.getFinancialResources().then(financialResources => {
+        this.financialResources = financialResources;
+
+        this.activatedRoute.params.subscribe(params => {
+          if (params.id) {
+            this.revenueId = params.id;
+            this.isEdit = true;
+            this.revenueService.getRevenue(params.id)
+              .then((revenue) => {
+                this.form.get('title').setValue(revenue.title);
+                this.form.get('value').setValue(parseFloat(revenue.value));
+                this.form.get('date').setValue(moment.utc(revenue.date).format('YYYY-MM-DD'));
+                this.form.get('CategoryId').setValue(revenue.CategoryId);
+                this.form.get('FinancialResourceId').setValue(revenue.FinancialResourceId);
+              })
+              .catch((err) => {
+                this.toastrService.error('Erro ao obter receita.');
+                console.error('Error to fetch revenue', err);
+              });
+          }
+        });
       });
     });
   }

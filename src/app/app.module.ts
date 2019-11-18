@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RevenueService } from './services/revenue.service';
 import { ExpenseService } from './services/expense.service';
 import { CategoryService } from './services/category.service';
+import { FinancialResourceService } from './services/financial-resource.service';
 import { UtilsService } from './services/utils.service';
 import { RevenueComponent } from './revenue/revenue.component';
 import { RevenueEditComponent } from './revenue/revenue-edit/revenue-edit.component';
@@ -20,6 +21,8 @@ import { ExpenseComponent } from './expense/expense.component';
 import { ExpenseEditComponent } from './expense/expense-edit/expense-edit.component';
 import { CategoryComponent } from './category/category.component';
 import { CategoryEditComponent } from './category/category-edit/category-edit.component';
+import { FinancialResourceComponent } from './financial-resource/financial-resource.component';
+import { FinancialResourceEditComponent } from './financial-resource/financial-resource-edit/financial-resource-edit.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 
@@ -34,7 +37,9 @@ import { ToastrModule } from 'ngx-toastr';
     ExpenseComponent,
     ExpenseEditComponent,
     CategoryComponent,
-    CategoryEditComponent
+    CategoryEditComponent,
+    FinancialResourceComponent,
+    FinancialResourceEditComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +55,8 @@ import { ToastrModule } from 'ngx-toastr';
     RevenueService,
     ExpenseService,
     UtilsService,
-    CategoryService
+    CategoryService,
+    FinancialResourceService
   ],
   bootstrap: [AppComponent]
 })
