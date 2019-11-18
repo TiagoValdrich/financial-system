@@ -7,6 +7,8 @@ import { ExpenseComponent } from './expense/expense.component';
 import { ExpenseEditComponent } from './expense/expense-edit/expense-edit.component';
 import { CategoryComponent } from './category/category.component';
 import { CategoryEditComponent } from './category/category-edit/category-edit.component';
+import { FinancialResourceComponent } from './financial-resource/financial-resource.component';
+import { FinancialResourceEditComponent } from './financial-resource/financial-resource-edit/financial-resource-edit.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -19,6 +21,9 @@ const routes: Routes = [
   { path: 'category', component: CategoryComponent },
   { path: 'category/edit', component: CategoryEditComponent },
   { path: 'category/edit/:id', component: CategoryEditComponent },
+  { path: 'financial-resource', component: FinancialResourceComponent },
+  { path: 'financial-resource/edit', component: FinancialResourceEditComponent },
+  { path: 'financial-resource/edit/:id', component: FinancialResourceEditComponent },
   { path: '**', component: DashboardComponent }
 ];
 

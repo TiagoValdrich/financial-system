@@ -31,8 +31,8 @@ export class CategoryEditComponent implements OnInit {
         this.categoryId = params.id;
         this.isEdit = true;
         this.categoryService.getCategory(params.id)
-          .then((revenue) => {
-            this.form.get('title').setValue(revenue.title);
+          .then((category) => {
+            this.form.get('title').setValue(category.title);
           })
           .catch((err) => {
             this.toastrService.error('Erro ao obter categoria.');
