@@ -11,6 +11,13 @@
                     </button>
                 </div>
             </div>
+            <!-- <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label></label>
+                    </div>
+                </div>
+            </div> -->
             <div class="row mt-3">
                 <div class="col-md-12">
                     <table class="table table-striped">
@@ -43,6 +50,13 @@
                                 <td>{{ expense.value | currency: 'BRL' }}</td>
                             </tr>
                         </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="5" style="text-align: right; padding-right: 10px;"><strong>Total:
+                                    </strong>{{ totalExpenses | currency: 'BRL' }}
+                                </td>
+                            </tr>
+                        </tfoot>
                     </table>
                 </div>
             </div>

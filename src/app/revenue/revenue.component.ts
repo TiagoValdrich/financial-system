@@ -11,6 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 export class RevenueComponent implements OnInit {
 
   public revenues;
+  public totalRevenues = 0;
 
   constructor(
     private revenueService: RevenueService,
@@ -22,6 +23,9 @@ export class RevenueComponent implements OnInit {
       .getRevenues()
       .then((revenues: any) => {
         this.revenues = revenues;
+        this.revenues.forEach((revenue) => {
+          this.totalRevenues += revenue.value;
+        });
       })
       .catch((err) => {
         this.toastrService.error('Erro ao buscar receitas');

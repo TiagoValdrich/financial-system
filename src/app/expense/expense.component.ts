@@ -11,6 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 export class ExpenseComponent implements OnInit {
 
   public expenses;
+  public totalExpenses = 0;
 
   constructor(
     private expenseService: ExpenseService,
@@ -22,6 +23,9 @@ export class ExpenseComponent implements OnInit {
       .getExpenses()
       .then((expenses: any) => {
         this.expenses = expenses;
+        this.expenses.forEach((expense) => {
+          this.totalExpenses += expense.value;
+        });
       })
       .catch((err) => {
         this.toastrService.error('Erro ao buscar despesas');
