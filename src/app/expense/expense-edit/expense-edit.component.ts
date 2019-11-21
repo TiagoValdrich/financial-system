@@ -71,7 +71,7 @@ export class ExpenseEditComponent implements OnInit {
       data.id = this.expenseId;
     }
 
-    if (data.value.indexOf(',') > 0) {
+    if (typeof data.value === 'string' && data.value.indexOf(',') > 0) {
       data.value = data.value.replace(',', '.');
     }
 
