@@ -43,6 +43,13 @@
                                 <td>{{ revenue.value | currency: 'BRL' }}</td>
                             </tr>
                         </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="5" style="text-align: right; padding-right: 10px;"><strong>Total:
+                                    </strong>{{ totalRevenues | currency: 'BRL' }}
+                                </td>
+                            </tr>
+                        </tfoot>
                     </table>
                 </div>
             </div>
