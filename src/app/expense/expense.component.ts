@@ -57,6 +57,10 @@ export class ExpenseComponent implements OnInit {
         this.expenses = this.expenses.filter(expense => {
           return expense.id !== id;
         });
+        this.totalExpenses = 0;
+        this.expenses.forEach(expense => {
+          this.totalExpenses += expense.value;
+        });
         this.toastrService.success('Despesa excluida com sucesso!');
       })
       .catch((err) => {
