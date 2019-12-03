@@ -1,13 +1,21 @@
+input,
+label,
+select {
+  font-size: 1.6rem;
+}
 .expense-title {
   font-size: 4rem;
 }
 .align-right {
   text-align: right;
 }
+.align-left {
+  text-align: left;
+}
 .align-center {
   margin: auto auto;
 }
-.expense-btn-add {
+.btn {
   font-size: 1.3rem;
 }
 .table {

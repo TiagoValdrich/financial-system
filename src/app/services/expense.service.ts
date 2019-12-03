@@ -21,9 +21,11 @@ export class ExpenseService {
     }
   }
 
-  async getExpenses(): Promise<Expense[]> {
+  async getExpenses(params?: any): Promise<Expense[]> {
     try {
-      const response: any = await this.http.get(`${environment.URL_API}/expense`).toPromise();
+      const response: any = await this.http.get(`${environment.URL_API}/expense`, {
+        params
+      }).toPromise();
       const expenses = Expense.buildExpensesFromResponse(response);
       return Promise.resolve(expenses);
     } catch (err) {
@@ -53,5 +55,5 @@ export class ExpenseService {
 
 function onError(err): Promise<any> {
   console.error('An error occurred while fetching expenses', err.stack || err);
-  return Promise.reject(new Error(err));
+  return Promise.reject(err);
 }

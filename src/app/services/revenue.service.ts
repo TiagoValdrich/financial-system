@@ -21,9 +21,11 @@ export class RevenueService {
     }
   }
 
-  async getRevenues(): Promise<Revenue[]> {
+  async getRevenues(params?: any): Promise<Revenue[]> {
     try {
-      const response: any = await this.http.get(`${environment.URL_API}/revenue`).toPromise();
+      const response: any = await this.http.get(`${environment.URL_API}/revenue`, {
+        params
+      }).toPromise();
       const revenues = Revenue.buildRevenuesFromResponse(response);
       return Promise.resolve(revenues);
     } catch (err) {
@@ -53,5 +55,5 @@ export class RevenueService {
 
 function onError(err): Promise<any> {
   console.error('An error occurred on revenues service', err.stack || err);
-  return Promise.reject(new Error(err));
+  return Promise.reject(err);
 }
