@@ -57,6 +57,10 @@ export class RevenueComponent implements OnInit {
         this.revenues = this.revenues.filter(revenue => {
           return revenue.id !== id;
         });
+        this.totalRevenues = 0;
+        this.revenues.forEach(revenue => {
+          this.totalRevenues += revenue.value;
+        });
         this.toastrService.success('Receita excluida com sucesso!');
       })
       .catch((err) => {
