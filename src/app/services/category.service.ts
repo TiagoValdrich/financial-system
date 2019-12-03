@@ -53,5 +53,5 @@ export class CategoryService {
 
 function onError(err): Promise<any> {
   console.error('An error occurred on categories service', err.stack || err);
-  return Promise.reject(new Error(err));
+  return Promise.reject(err);
 }

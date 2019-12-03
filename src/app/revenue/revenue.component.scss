@@ -1,3 +1,9 @@
+input,
+label,
+select {
+    font-size: 1.6rem;
+}
+
 .revenue-title {
     font-size: 4rem;
 }
@@ -10,7 +16,12 @@
     margin: auto auto;
 }
 
-.revenue-btn-add {
+.align-left {
+    text-align: left;
+}
+
+
+.btn {
     font-size: 1.3rem;
 }
 

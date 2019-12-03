@@ -11,6 +11,56 @@
                     </button>
                 </div>
             </div>
+            <hr>
+            <form [formGroup]="form" novalidate>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label><strong>Título</strong></label>
+                            <input type="text" formControlName="title" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label><strong>Data</strong></label>
+                            <input type="date" formControlName="date" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label><strong>Categoria</strong></label>
+                            <select formControlName="category" class="form-control">
+                                <option *ngFor="let category of categories" value="{{ category.id }}">
+                                    {{ category.title }}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label><strong>Recurso Financeiro</strong></label>
+                            <select formControlName="financialResource" id="financialResource" class="form-control">
+                                <option *ngFor="let financialResource of financialResources"
+                                    value="{{ financialResource.id }}">
+                                    {{ financialResource.title }}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 align-left">
+                        <button class="btn btn-success" (click)="filter()">
+                            <i class="fa fa-search"></i> Filtrar
+                        </button>
+                        <button class="btn btn-primary ml-3" (click)="clearFilter()">
+                            <i class="fa fa-backspace"></i> Limpar
+                        </button>
+                    </div>
+                </div>
+            </form>
             <div class="row mt-3">
                 <div class="col-md-12">
                     <table class="table table-striped">
@@ -20,6 +70,8 @@
                             <th>Data</th>
                             <th>Título</th>
                             <th>Valor</th>
+                            <th>Categoria</th>
+                            <th>Recurso Financeiro</th>
                         </thead>
                         <tbody>
                             <tr *ngFor="let revenue of revenues">
@@ -41,6 +93,9 @@
                                 <td>{{ revenue.date }}</td>
                                 <td>{{ revenue.title }}</td>
                                 <td>{{ revenue.value | currency: 'BRL' }}</td>
+                                <td>{{ revenue.Category ? revenue.Category.title : 'Sem categoria' }}</td>
+                                <td>{{ revenue.FinancialResource ? revenue.FinancialResource.title : 'Sem recurso financeiro' }}
+                                </td>
                             </tr>
                         </tbody>
                         <tfoot>
