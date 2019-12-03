@@ -71,7 +71,7 @@ export class RevenueEditComponent implements OnInit {
       data.id = this.revenueId;
     }
 
-    if (data.value.indexOf(',') > 0) {
+    if (typeof data.value === 'string' && data.value.indexOf(',') > 0) {
       data.value = data.value.replace(',', '.');
     }
 

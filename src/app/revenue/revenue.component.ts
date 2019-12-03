@@ -22,6 +22,7 @@ export class RevenueComponent implements OnInit {
   public revenues;
   public categories;
   public financialResources;
+  public totalRevenues = 0;
 
   constructor(
     private revenueService: RevenueService,
@@ -39,6 +40,10 @@ export class RevenueComponent implements OnInit {
       this.revenues = await this.revenueService.getRevenues();
       this.categories = await this.categoryService.getCategories();
       this.financialResources = await this.financialResourceService.getFinancialResources();
+
+      this.revenues.forEach((revenue) => {
+        this.totalRevenues += revenue.value;
+      });
 
       return Promise.resolve();
     } catch (err) {
